@@ -8,10 +8,10 @@ import io.cucumber.java.en.When;
 
 public class HomeStep {
 
-    private HomeService homeService;
+    private HomeService homeService = null;
     
-    public HomeStep(HomeService homeService) {
-        this.homeService = homeService;
+    public HomeStep() {
+        this.homeService = new HomeService();
     }
 
     @Given("El usuario debe de estár en la web de google")

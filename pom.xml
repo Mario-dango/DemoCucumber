@@ -12,47 +12,55 @@
         <java.version>20</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
+        <!-- <cucumber.features>src/test/resources/features</cucumber.features> -->
     </properties>
 
     <dependencies>
+
+        <!-- JUNIT 5 -->
+            <!-- Actualizar dependencia de junit ya que por defecto la de mvn del arquetipo basico de java17 no reconoce cucumber -->
+            <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>5.9.3</version>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.10.0</version>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+
+        <!-- CUCUMBER -->
+            <!-- Se agregan dependencia de cucumber para funcionar con java para los decoradores/interfaces y su complemento de junit para la clase de runner -->
+            <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>7.13.0</version>
+            <version>7.14.0</version>
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
-            <version>7.13.0</version>
+            <version>7.14.0</version>
             <scope>test</scope>
         </dependency>
 
-            <!-- SELENIUM -->
+        <!-- SELENIUM -->
+            <!-- Se utiliza selenium para la integración de acciones con el WebDriverManager e interacciones pertinentes -->
+            <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>3.141.59</version>
         </dependency>
-            <!-- WebDriverManager -->
+
+        <!-- WEB DRIVER MANAGER -->
+            <!-- Se integra la dependencia de bonigarcia para uso de los drivers necesarios para los navegadores (mantener actualizado) -->
+            <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>5.0.3</version>
+            <version>5.5.3</version>
             <scope>test</scope>
         </dependency>
 
-        <dependency>
-            <groupId>com.beust</groupId>
-            <artifactId>jcommander</artifactId>
-            <version>1.78</version> <!-- Usa una versión más reciente -->
-        </dependency>
     </dependencies>
 
     <build>

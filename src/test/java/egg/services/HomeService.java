@@ -1,6 +1,5 @@
 package egg.services;
 
-import org.apache.hc.core5.util.Asserts;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -31,7 +30,7 @@ public class HomeService {
     }
 
     public void elUsuarioHaceClickEnBuscar() {
-        WebElement botonBuscador = driver.findElement(By.tagName(BaseConstant.BOTON_SEARCH_NAME));
+        WebElement botonBuscador = driver.findElement(By.cssSelector(BaseConstant.BOTON_SEARCH_CSS));
         botonBuscador.click();
     }
 
@@ -45,6 +44,7 @@ public class HomeService {
         String contenidoTitulo = titulo.getText();
         String contenidoEsperado = "Tools & techniques that elevate teams to greatness";
         Assertions.assertEquals(contenidoEsperado, contenidoTitulo);
+        driver.quit();
     }
     
 }
