@@ -18,3 +18,17 @@ Feature: Probar pagina de cucumber
               And procede a hacerle click al boton buscar
               And selecciona el resultado de cucumber.io
              Then El usuario visualiza la pagina principal
+            
+    @Test @EnProgreso
+    Scenario Outline: El usuario ingresa a la web principal de varias paginas
+            Given El usuario debe de estár en la web del "<Buscador>"
+             When ingresa "<Objetivo>" en el buscador de google
+              And procede a hacerle click al boton buscar
+              And selecciona el resultado de la "<Busqueda>"
+             Then El usuario visualiza la pagina principal de "<Objetivo>"
+
+    Examples:
+        | Objetivo  | Buscador | Busqueda    |
+        | cucumber  | google   | cucumber.io |
+        | QA test   | google   | cucumber.io |
+        | Selenium  | duckduck | selenium web|
