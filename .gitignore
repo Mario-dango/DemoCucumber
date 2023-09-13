@@ -1,0 +1,5 @@
+#   Ignorar configuración del VSCode
+.vscode/
+
+#   Ignorar salidas compiladas del proyecto
+target/
