@@ -7,6 +7,8 @@ import org.junit.runner.RunWith;
 
 //Configuración de las opciones de cucumber
 @CucumberOptions(
+        //      Comprueba que los steps del feature estén definidos, ¡Si es true -> no ejecuta pruebas solamente verifica!.
+        dryRun = false,
         //      Indica donde estan los archivos features a correr
         features = "src/test/resources/features",
         //      Indica el paquete en donde se encuentran las clases Steps que unen los features con las clases de servicio
@@ -20,9 +22,7 @@ import org.junit.runner.RunWith;
                 "junit:target/cucumber.xml",
                 "json:target/cucumber-report.json"},
         //      Habilita que la ejecución de cada línea del feature se vea con colores de acuerdo con su estado/resultado de ejecución
-        monochrome = false,
-        //      Comprueba que los steps del feature estén definidos 
-        dryRun = true
+        monochrome = false
 )
 public class TestRunner {
 }
