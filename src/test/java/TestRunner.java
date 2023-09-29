@@ -3,6 +3,7 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
+//Decorador para correr con cucumber
 @RunWith(Cucumber.class)        
 
 //Configuración de las opciones de cucumber
